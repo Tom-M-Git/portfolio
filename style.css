@@ -1,0 +1,222 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+body {
+
+}
+
+#navbar {
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #47a;
+  color: #f0f0f0;
+  z-index: 90;
+}
+
+
+#navbar ul {
+  list-style: none;
+}
+#navbar li {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* for the appearance of the links */
+#navbar a {
+  width: 100%;
+  color: #f0f0f0;
+  text-decoration: none;
+}
+#navbar a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+/* ------------------------------- */
+
+.nav-list {
+  display: flex;
+  margin-left: 15px;
+  font-size: 2em;
+}
+
+.menu-icon {
+  margin-right: 25px;
+  font-size: 2.2em;
+  cursor: pointer;
+  transition: transform .1s linear ;
+}
+.menu-btn {
+  display: none;
+}
+
+.hiding-menu {
+  width: 100%;
+  display: none;
+}
+
+.language {
+  text-align: right;
+  font-size: 2em;
+  margin-top: 15px;
+}
+.language li {
+  padding-top: 10px;
+  margin-bottom: 5px;
+  border-top: 1px #f0f0f0 solid;
+}
+.language li:last-child {
+  margin-bottom: -10px;
+}
+.language a {
+  display: block;
+}
+
+/* Depending on the current page */
+#english-current {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+#japanese-current {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+/* ----------------------------- */
+
+.menu-btn:checked ~ .hiding-menu {
+  display: block;
+}
+.menu-btn:checked ~ .menu-icon {
+  transform: rotate(-90deg);
+}
+
+
+/* Welcome Section*/
+
+#welcome-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+#welcome-section h1 {
+  text-align: center;
+}
+#welcome-section p {
+  margin-top: 1rem;
+  line-height: 1.5rem;
+  text-align: center;
+}
+
+/* PROJECT SECTION STARTS */
+
+#projects {
+  background-color: #303841;
+  color: #f0f0f0;
+  padding: 5rem 1rem 2rem 1rem;
+  text-align: center;
+}
+.project-section-header {
+  max-width: 150px;
+  margin: 0 auto 2.5rem auto;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.05rem solid #f0f0f0;
+}
+.project-section-videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: auto;
+  align-items: start;
+  grid-gap: 2em;
+  justify-content: center;
+  width: 100%;
+}
+.item {
+}
+.project-section-videos iframe {
+  width: 100%;
+  min-height: 250px;
+  background-color: #aaa;
+
+}
+
+/* ---------------------------- */
+
+/* CONTACT SECTION */
+.contact-section {
+  padding: 5rem 1rem 5rem 1rem;
+  text-align: center;
+}
+.contact-section-header {
+  max-width: 150px;
+  margin: 0 auto 2.5rem auto;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.05rem solid #000;
+}
+.contact-links {
+
+}
+.contact-links a {
+  border: 1px solid #555;
+  border-radius: 2px;
+  padding: 0.5rem 0.3rem 0.3rem 0.3rem;
+
+  text-decoration: none;
+  color: #000;
+  font-size: 1.2rem;
+  margin: 0 1rem 0 1rem;
+}
+.contact-links a:hover {
+  background-color: #eee;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
+}
+.contact-links a:visited {
+  text-decoration: none;
+}
+.contact-links i {
+  font-size: 1.5rem;
+}
+
+/* ------------------------------- */
+
+footer {
+  padding-bottom: 50px;
+  padding-top: 10px;
+  background-color: #303841;
+  color: #f0f0f0;
+  text-align: center;
+}
+
+/* 375px is the display size of iPhone X */
+/* 640px for retina */
+@media (max-width: 399px) {
+  #navbar {
+    /* padding-left: 8px */
+    justify-content: center;
+  }
+  .nav-list {
+    margin-left: 0px;
+  }
+  #navbar li {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+  .menu-icon {
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+}
+
+/* Bigeer than Retina */
+@media (min-width: 641px) {
+}
