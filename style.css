@@ -195,6 +195,7 @@ footer {
   background-color: #303841;
   color: #f0f0f0;
   text-align: center;
+  line-height: 1.5rem;
 }
 
 /* 375px is the display size of iPhone X */
