@@ -11,23 +11,31 @@
   <style>
   </style>
 </head>
+
+
+
 <body translation="no">
+
   <header>
     <nav id="navbar">
+        <!-- The hiding menu on mobile -->
+        <div class="empty"></div>
+        <input id="menu-btn" class="menu-btn" type="checkbox"/>
+        <label for="menu-btn" class="menu-icon"><i class="fas fa-bars"></i></label>
+
         <ul class="nav-list">
                   <li><a href="#welcome-section">About</a></li>
                   <li><a href="#projects">Work</a></li>
                   <li><a href="#contact">Contact</a></li>
         </ul>
-        <!-- The hiding menu on mobile -->
-        <input id="menu-btn" class="menu-btn" type="checkbox"/>
-        <label for="menu-btn" class="menu-icon"><i class="fas fa-bars"></i></label>
-        <div class="hiding-menu">
-          <ul class="language">
+        
+        <ul class="language">
                     <li><a id="english" href="index.html">English</a></li>
                     <li><a id="japanese-current" href="#">Japanese</a></li>
-          </ul>
-        </div>
+        </ul>
+        
+        
+        
     </nav>
   </header>
 

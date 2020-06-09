@@ -6,7 +6,6 @@
   scroll-behavior: smooth;
 }
 body {
-
 }
 
 #navbar {
@@ -17,20 +16,19 @@ body {
   justify-content: space-between;
   top: 0;
   width: 100%;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  
   background-color: #47a;
   color: #f0f0f0;
   z-index: 90;
 }
 
+#navbar > * {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
 
 #navbar ul {
   list-style: none;
-}
-#navbar li {
-  margin-left: 10px;
-  margin-right: 10px;
 }
 
 /* for the appearance of the links */
@@ -44,40 +42,41 @@ body {
 }
 /* ------------------------------- */
 
-.nav-list {
-  display: flex;
-  margin-left: 15px;
-  font-size: 2em;
-}
-
 .menu-icon {
+  order: 2;
   margin-right: 25px;
   font-size: 2.2em;
   cursor: pointer;
-  transition: transform .1s linear ;
+  transition: transform .1s linear;
+  
 }
 .menu-btn {
   display: none;
 }
 
-.hiding-menu {
+.nav-list {
   width: 100%;
+  font-size: 2em;
+  order: 3;
+  text-align: center;
+  border-top: 1px #258 solid;
   display: none;
 }
 
+.nav-list a {
+  display: block;
+}
+
+
 .language {
-  text-align: right;
+  order: 4;
+  width: 100%;
+  text-align: center;
   font-size: 2em;
-  margin-top: 15px;
+  border-top: 1px #258 solid;
+  display: none;
 }
-.language li {
-  padding-top: 10px;
-  margin-bottom: 5px;
-  border-top: 1px #f0f0f0 solid;
-}
-.language li:last-child {
-  margin-bottom: -10px;
-}
+
 .language a {
   display: block;
 }
@@ -91,7 +90,10 @@ body {
 }
 /* ----------------------------- */
 
-.menu-btn:checked ~ .hiding-menu {
+.menu-btn:checked ~ .nav-list {
+  display: block;
+}
+.menu-btn:checked ~ .language {
   display: block;
 }
 .menu-btn:checked ~ .menu-icon {
@@ -200,24 +202,27 @@ footer {
 
 /* 375px is the display size of iPhone X */
 /* 640px for retina */
-@media (max-width: 399px) {
-  #navbar {
-    /* padding-left: 8px */
-    justify-content: center;
-  }
-  .nav-list {
-    margin-left: 0px;
-  }
-  #navbar li {
-    margin-left: 4px;
-    margin-right: 4px;
+@media (min-width: 410px) {
+  .empty {
+    display: none;
   }
   .menu-icon {
-    margin-right: 15px;
-    margin-left: 15px;
-  }
-}
 
-/* Bigeer than Retina */
-@media (min-width: 641px) {
+  }
+  .nav-list {
+    display: flex;
+    order: 1;
+    width: auto;
+    border-top: none;
+  }
+  #navbar .nav-list {
+    padding: 0 0 0 1rem;
+  }
+  .nav-list a {
+    padding: 15px 5px;
+  }
+
+  .menu-btn:checked ~ .nav-list {
+    display: flex;
+  }
 }
