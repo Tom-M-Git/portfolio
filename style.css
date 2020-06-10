@@ -104,6 +104,7 @@ body {
 /* Welcome Section*/
 
 #welcome-section {
+  padding-top: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -119,6 +120,34 @@ body {
   line-height: 1.5rem;
   text-align: center;
 }
+
+/* SKILLS */
+
+#skills-wrapper {
+  margin-top: 3rem;
+}
+.skills {
+  min-width: 300px;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
+}
+#skills-wrapper .skills p {
+  line-height: 0.5rem;
+  text-align: left;
+}
+.skill-name {
+  background-color: #303841;
+  border-radius: 10px;
+  color: #f0f0f0;
+  padding: 0.5rem;
+}
+
+
+
+
+/* --------------------- */
 
 /* PROJECT SECTION STARTS */
 
