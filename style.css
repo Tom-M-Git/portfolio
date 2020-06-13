@@ -109,7 +109,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
 }
 #welcome-section h1 {
@@ -377,5 +377,19 @@ footer {
 
   .menu-btn:checked ~ .nav-list {
     display: flex;
+  }
+}
+
+/* Media query for the Japanese page */
+@media (min-width: 450px) {
+  .space-after-greeting {
+    display: none;
+  }
+}
+/* --------------------------------- */
+
+@media (max-height: 550px) {
+  #welcome-section {
+    padding-top: 6rem;
   }
 }
