@@ -1,0 +1,12 @@
+{
+    "": {
+        "language": "en-US",
+        "plural-forms":"nplurals=2; plural=n>1;"
+    },
+    "Tomoaki Morioka":"Tomoaki Morioka",
+    "There is %1 apple and %2 banana": "There is %1 apple and %2 banana",
+    "There is %1 apple": [
+        "Il y a %1 pomme",
+        "Il y a %1 pommes"
+    ]
+}
