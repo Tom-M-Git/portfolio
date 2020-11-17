@@ -1,0 +1,5 @@
+{
+    "author":"Tomoaki Morioka",
+    "howManyApples": "Il y a {{count}} pomme",
+    "howManyApples_plural": "Il y {{count}} %1 pommes"
+}

@@ -1,8 +1,26 @@
-import Gettext from '../lib/gettext.js';
-import Header from './components/header.js';
-import Footer from './components/footer.js';
 
-let jaJsonUrl, enJsonUrl, rootEl;
-jaJsonUrl = "../locale/ja.json";
-enJsonUrl = "../locale/en-US.json";
+let jaJsonUrl, enJsonUrl, fetchJa, fetchEn, i18n, rootEl;
 rootEl = document.getElementById("root");
+
+
+
+function translation() {
+    jaJsonUrl = "../locale/ja.json";
+    enJsonUrl = "../locale/en-US.json";
+    fetchEn = fetch(enJsonUrl);
+    fetchJa = fetch(jaJsonUrl);
+
+    return new Promise( (resolve, reject) => {
+        fetchEn.then((res)=>{
+            return res.json();
+        }).then((res)=>{
+            
+        });
+        fetchJa.then((res)=>{
+            return res.json();
+        }).then((res)=>{
+            
+        });
+        resolve();
+    } );
+};
