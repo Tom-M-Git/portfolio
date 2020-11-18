@@ -11,6 +11,8 @@ function translationJs() {
             backend: {
                 loadPath: '/locales/{{lng}}/{{ns}}.json',
             }
+        }).then((t)=>{
+            loadEverythingelse();
         }).catch(()=>{
             i18next
             .use(i18nextHttpBackend)
@@ -21,17 +23,15 @@ function translationJs() {
                 backend: {
                     loadPath: '/portfolio/locales/{{lng}}/{{ns}}.json',
                 }
+            }).then((t)=>{
+                loadEverythingelse();
             });
-        }).then((t)=>{
-            loadEverythingelse();
         });
-
     function loadEverythingelse () {
         htmlEl.dispatchEvent(componentReady); 
         i18next.on("languageChanged", ()=>{
             htmlEl.dispatchEvent(update);             
         });
     }
-    
 };
 translationJs();
