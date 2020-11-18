@@ -1,5 +1,5 @@
 {
     "author":"森岡 知映",
-    "howManyApples": "Il y a {{count}} pomme",
-    "howManyApples_plural": "Il y {{count}} %1 pommes"
+    "howManyApples": "リンゴが{{count}}個あります。",
+    "howManyApples_plural": "リンゴが{{count}}個あります。"
 }

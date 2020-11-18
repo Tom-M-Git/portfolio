@@ -1,30 +1,34 @@
-class Footer {
-    Html = class {
-        constructor(){
-            this.html = `
-                <footer>
-                    <h1>Hi, ${i18next.t("howManyApples", {count: 2})}</h1>
-                </footer>
-            `;
-        }
-    }
-    CustomElements = class extends HTMLElement {
+function Footer() {
+    class CustomElements extends HTMLElement {
         constructor(){
             super();
-            this.template = document.createElement('template');
-            let shadow = this.attachShadow({mode:'open'});
-            this.updateComponent = ()=>{
-                this.template.innerHTML = new Html().html;
+            let Html, html, template, shadow, updateComponent;
+
+            Html = () => {
+                html = `
+                    <footer>
+                        <h1>Hi, ${i18next.t("howManyApples", {count: 3})}</h1>
+                    </footer>
+                `;
+                return html;
+            };
+
+            template = document.createElement('template');
+            shadow = this.attachShadow({mode:'open'});
+
+            updateComponent = () => {
+                template.innerHTML = Html();
                 shadow.innerHTML = "";
-                shadow.appendChild(this.template.content.cloneNode(true));
-            };this.updateComponent();
+                shadow.appendChild(template.content.cloneNode(true));
+            }; updateComponent();
+
             document.querySelector("html").addEventListener("update", ()=>{
-                this.updateComponent();
+                updateComponent();
             });
         }
     }
-    constructor() {
-        window.customElements.define('footer-component', this.CustomElements);
-    }
+    window.customElements.define('footer-component', CustomElements);
 }
-export default Footer;
+document.querySelector("html").addEventListener("componentReady", ()=>{
+    Footer();
+});

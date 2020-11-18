@@ -1,31 +1,35 @@
-class Header {
-    constructor() {
-        window.customElements.define('header-component', class extends HTMLElement {
-            constructor(){
-                super();
-                class Html {
-                    constructor(){
-                        this.html = `
-                            <header>
-                                <h1>Hi, ${i18next.t("author")}</h1>
-                                <button onclick="i18next.changeLanguage('ja')">日本語</button>
-                                <button onclick="i18next.changeLanguage('en')">English</button>
-                            </header>
-                        `;
-                    }
-                }
-                this.template = document.createElement('template');
-                let shadow = this.attachShadow({mode:'open'});
-                this.updateComponent = ()=>{
-                    this.template.innerHTML = new Html().html;
-                    shadow.innerHTML = "";
-                    shadow.appendChild(this.template.content.cloneNode(true));
-                };this.updateComponent();
-                document.querySelector("html").addEventListener("update", ()=>{
-                    this.updateComponent();
-                });
+function Header () {
+    window.customElements.define('header-component', class extends HTMLElement {
+        constructor(){
+            super();
+            let Html, html, template, shadow, updateComponent;
+
+            Html = () => {
+                html = `
+                    <header>
+                        <h1>Hi, ${i18next.t("author")}</h1>
+                        <button onclick="i18next.changeLanguage('ja')">日本語</button>
+                        <button onclick="i18next.changeLanguage('en')">English</button>
+                    </header>
+                `;
+                return html;
             }
-        });
-    }
+
+            template = document.createElement('template');
+            shadow = this.attachShadow({mode:'open'});
+
+            updateComponent = ()=>{
+                template.innerHTML = Html();
+                shadow.innerHTML = "";
+                shadow.appendChild(template.content.cloneNode(true));
+            }; updateComponent();
+
+            document.querySelector("html").addEventListener("update", ()=>{
+                updateComponent();
+            });
+        }
+    });
 }
-export default Header;
+document.querySelector("html").addEventListener("componentReady", ()=>{
+    Header();
+});

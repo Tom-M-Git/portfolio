@@ -1,18 +1,20 @@
-import Header from './components/header.js';
-import Footer from './components/footer.js';
 function translationJs() {
-    let headerComponent;
+    const componentReady = new Event("componentReady");
+    const update = new Event("update");
+    let htmlEl = document.querySelector("html");
     i18next
         .use(i18nextHttpBackend)
         .init({
             lng:"ja",
             fallbackLng:"en",
             debug: true,
+            backend: {
+                loadPath: '../locales/{{lng}}/{{ns}}.json'
+            }
         }).then((t)=>{
-            headerComponent = new Header();
-            const event = new Event("update");
+            htmlEl.dispatchEvent(componentReady); 
             i18next.on("languageChanged", ()=>{
-                document.querySelector("html").dispatchEvent(event);             
+                htmlEl.dispatchEvent(update);             
             });
         });
 };
