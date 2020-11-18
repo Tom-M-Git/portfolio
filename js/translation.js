@@ -9,7 +9,7 @@ function translationJs() {
             fallbackLng:"en",
             debug: true,
             backend: {
-                loadPath: '../locales/{{lng}}/{{ns}}.json'
+                loadPath: '/locales/{{lng}}/{{ns}}.json',
             }
         }).then((t)=>{
             htmlEl.dispatchEvent(componentReady); 
