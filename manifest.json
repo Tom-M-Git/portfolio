@@ -1,5 +1,6 @@
 {
     "short_name": "Portfolio",
     "name": "Tomoaki Morioka — Portfolio",
-    "start_url": "/portfolio"
+    "start_url": "./portfolio",
+    "scope": "./"
   }
