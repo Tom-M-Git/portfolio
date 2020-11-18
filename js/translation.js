@@ -2,6 +2,9 @@ function translationJs() {
     const componentReady = new Event("componentReady");
     const update = new Event("update");
     let htmlEl = document.querySelector("html");
+    let loadPath = (window.location.host == "tom-m-git.github.io")
+        ? "/portfolio/locales/{{lng}}/{{ns}}.json"
+        : "/locales/{{lng}}/{{ns}}.json";
     i18next
         .use(i18nextHttpBackend)
         .init({
@@ -9,25 +12,12 @@ function translationJs() {
             fallbackLng:"en",
             debug: true,
             backend: {
-                loadPath: '/locales/{{lng}}/{{ns}}.json',
+                loadPath: loadPath,
             }
         }).then((t)=>{
-            loadEverythingelse();
-        }).catch(()=>{
-            i18next
-            .use(i18nextHttpBackend)
-            .init({
-                lng:"ja",
-                fallbackLng:"en",
-                debug: true,
-                backend: {
-                    loadPath: '/portfolio/locales/{{lng}}/{{ns}}.json',
-                }
-            }).then((t)=>{
-                loadEverythingelse();
-            });
+            loadEverythingElse();
         });
-    function loadEverythingelse () {
+    function loadEverythingElse () {
         htmlEl.dispatchEvent(componentReady); 
         i18next.on("languageChanged", ()=>{
             htmlEl.dispatchEvent(update);             
