@@ -5,3 +5,12 @@
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   scroll-behavior: smooth;
 }
+#content {
+  background-color: #E5E5E5;
+  background-image: url('../lib/solid.svg#globe(viewBox(0,0,496,512))');
+  background-repeat: repeat-y;
+  background-size: 100%;
+}
+#profile-image {
+  max-width: 100%;
+}

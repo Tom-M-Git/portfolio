@@ -1,31 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-root="true">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="discription" content="Tomoaki Morioka — A translator, front-end developer, and video editor.">
-  <meta name="discription" content="森岡 知映 — 翻訳者、 フロントエンドエンジニア、 動画編集者。">
+  <meta name="discription" content="森岡 知映 — A translator, front-end developer, and video editor.">
   <meta name="subject" content="Portfolio">
-  <meta name="subject" content="ポートフォリオ">
   <meta name="author" content="Tomoaki Morioka">
   <meta name="author" content="森岡 知映">
   <meta name="rating" content="General">
 
+  <meta http-equiv="last-modified" content="2020-11-19T08:00:00Z">
   <meta name="google" content="notranslate">
-  <link rel="stylesheet" type="text/css" href="./css/main.css">
-  <link rel="manifest" href="manifest.json">
+  <link rel="canonical" href="https://tom-m-git.github.io/portfolio/">
+  <link rel="alternate" hreflang="en" href="https://tom-m-git.github.io/portfolio/en/">
+  <link rel="alternate" hreflang="ja" href="https://tom-m-git.github.io/portfolio/ja/">
+  <meta name="title" content="Tomoaki Morioka Portfolio">
+  <meta name="title" content="森岡 知映 Portfolio">
   <title>Tomoaki Morioka — Portfolio</title>
+
+  <link rel="icon" type="image/x-icon" sizes="32x32" href="favicon-32x32.ico">
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="favicon-16x16.ico">
+  <link rel="stylesheet" type="text/css" href="./css/main.css">
+  <script>
+    const lngCache = document.cookie.match(/(?<=i18next=)[^;]*/);
+    if(lngCache != null){ window.location.replace(window.location.href.replace(/index\.html/, '')+lngCache); }
+  </script>
 </head>
 <body>
-  <noscript>You need to enable JavaScript to run this webpage.</noscript>
-  <div id="root"></div>
-  <header-component></header-component>
-  <footer-component></footer-component>
-
-  <script src="./js/components/header.js"></script>
+  <noscript>Please enable JavaScript to run this webpage.</noscript>
+  <section id="content">
+    <svg viewBox="0 0 496 512" style="width:5em; vertical-align: bottom;" fill="#00B0D0"><use xlink:href="./lib/solid.svg#globe"></use></svg>
+    <header id="page-header">
+      <img id="profile-image" src="./assets/img/tomoaki-morioka-icon-540x540.png" alt="profile image">
+      <h1>Tomoaki Morioka</h1>
+      <h2>Portfolio</h2>
+    </header>
+    <main>
+      <nav id="language-selector">
+        <div class="language-button">
+          <a href="./en/index.html">
+            English
+            <svg viewBox="0 0 320 512" style="width:1em; vertical-align: bottom;"><use xlink:href="./lib/solid.svg#chevron-right"></use></svg>
+          </a>
+        </div>
+        <div class="language-button">
+          <a href="./ja/index.html">
+            Japanese / 日本語
+            <svg viewBox="0 0 320 512" style="width:1em; vertical-align: bottom;"><use xlink:href="./lib/solid.svg#chevron-right"></use></svg>
+          </a>
+        </div>
+      </nav>
+    </main>
+    <footer id="page-footer" is="footer-component"></footer>
+  </section>
   <script src="./js/components/footer.js"></script>
   <script src="./lib/i18next.js"></script>
   <script src="./lib/i18nextHttpBackend.js"></script>
+  <script src="./lib/i18nextBrowserLanguageDetector.min.js"></script>
   <script src="./js/translation.js"></script>
 </body>
 </html>

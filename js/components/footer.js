@@ -3,12 +3,17 @@ function Footer() {
         constructor(){
             super();
             let Html, html, template, shadow, updateComponent;
-
+            const githubUrl = "tom-m-git.github.io", hostVar = window.location.host, rootPath = (hostVar == githubUrl) ? "/portfolio/" : "/";
+            
             Html = () => {
                 html = `
-                    <footer>
-                        <h1>Hi, ${i18next.t("howManyApples", {count: 3})}</h1>
-                    </footer>
+                    <div class="social-links">
+                        <h3>Social:</h3>
+                        <svg viewBox="0 0 448 512" style="width:2em;vertical-align:bottom;"><use xlink:href="${rootPath}lib/brands.svg#github"></use></svg>
+                        <svg viewBox="0 0 448 512" style="width:2em;vertical-align:bottom;"><use xlink:href="${rootPath}lib/brands.svg#facebook"></use></svg>
+                        ${i18next.t('howManyApples', {count: 2})}
+                    </div>
+                    <div class="copyright">Copyright &copy; 2020 Tomoaki Morioka. All rights reserved.</div>
                 `;
                 return html;
             };
@@ -21,13 +26,13 @@ function Footer() {
                 shadow.innerHTML = "";
                 shadow.appendChild(template.content.cloneNode(true));
             }; updateComponent();
-
+            
             document.querySelector("html").addEventListener("update", ()=>{
                 updateComponent();
             });
         }
     }
-    window.customElements.define('footer-component', CustomElements);
+    window.customElements.define('footer-component', CustomElements, { extends: "footer" });
 }
 document.querySelector("html").addEventListener("componentReady", ()=>{
     Footer();

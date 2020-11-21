@@ -6,11 +6,9 @@ function Header () {
 
             Html = () => {
                 html = `
-                    <header>
-                        <h1>Hi, ${i18next.t("author")}</h1>
-                        <button onclick="i18next.changeLanguage('ja')">日本語</button>
-                        <button onclick="i18next.changeLanguage('en')">English</button>
-                    </header>
+                    <h1>Hi, ${i18next.t("author")}</h1>
+                    <button onclick="i18next.changeLanguage('ja')">日本語</button>
+                    <button onclick="i18next.changeLanguage('en')">English</button>
                 `;
                 return html;
             }
@@ -28,7 +26,7 @@ function Header () {
                 updateComponent();
             });
         }
-    });
+    }, { extends: "header" });
 }
 document.querySelector("html").addEventListener("componentReady", ()=>{
     Header();
