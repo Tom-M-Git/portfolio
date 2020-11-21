@@ -9,8 +9,8 @@ function Footer() {
                 html = `
                     <div class="social-links">
                         <h3>Social:</h3>
-                        <svg viewBox="0 0 448 512" style="width:2em;vertical-align:bottom;"><use xlink:href="${rootPath}lib/brands.svg#github"></use></svg>
-                        <svg viewBox="0 0 448 512" style="width:2em;vertical-align:bottom;"><use xlink:href="${rootPath}lib/brands.svg#facebook"></use></svg>
+                        <svg class="social-icon" viewBox="0 0 448 512" fill="#333333" style="width:2em;vertical-align:bottom;"><use xlink:href="${rootPath}lib/brands.svg#github"></use></svg>
+                        <svg class="social-icon" viewBox="0 0 448 512" fill="#333333" style="width:2em;vertical-align:bottom;"><use xlink:href="${rootPath}lib/brands.svg#facebook"></use></svg>
                         ${i18next.t('howManyApples', {count: 2})}
                     </div>
                     <div class="copyright">Copyright &copy; 2020 Tomoaki Morioka. All rights reserved.</div>

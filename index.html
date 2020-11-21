@@ -29,27 +29,29 @@
 </head>
 <body>
   <noscript>Please enable JavaScript to run this webpage.</noscript>
+  <div id="background"></div>
   <section id="content">
-    <svg viewBox="0 0 496 512" style="width:5em; vertical-align: bottom;" fill="#00B0D0"><use xlink:href="./lib/solid.svg#globe"></use></svg>
     <header id="page-header">
       <img id="profile-image" src="./assets/img/tomoaki-morioka-icon-540x540.png" alt="profile image">
-      <h1>Tomoaki Morioka</h1>
-      <h2>Portfolio</h2>
+      <h1 id="header-title">Tomoaki&nbsp;Morioka</h1>
+      <h2 id="header-subtitle">Portfolio</h2>
     </header>
     <main>
       <nav id="language-selector">
-        <div class="language-button">
-          <a href="./en/index.html">
-            English
-            <svg viewBox="0 0 320 512" style="width:1em; vertical-align: bottom;"><use xlink:href="./lib/solid.svg#chevron-right"></use></svg>
-          </a>
-        </div>
-        <div class="language-button">
-          <a href="./ja/index.html">
-            Japanese / 日本語
-            <svg viewBox="0 0 320 512" style="width:1em; vertical-align: bottom;"><use xlink:href="./lib/solid.svg#chevron-right"></use></svg>
-          </a>
-        </div>
+        <ul>
+          <li class="language-button">
+            <a href="./en/index.html">
+              English
+              <svg viewBox="0 0 320 512" fill="#333333"><use xlink:href="./lib/solid.svg#chevron-right"></use></svg>
+            </a>
+          </li>
+          <li class="language-button">
+            <a href="./ja/index.html">
+              Japanese / 日本語
+              <svg viewBox="0 0 320 512" fill="#333333"><use xlink:href="./lib/solid.svg#chevron-right"></use></svg>
+            </a>
+          </li>
+        </ul>
       </nav>
     </main>
     <footer id="page-footer" is="footer-component"></footer>
