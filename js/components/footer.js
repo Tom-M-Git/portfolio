@@ -3,15 +3,15 @@ function Footer() {
         constructor(){
             super();
             let Html, html, template, shadow, updateComponent;
-            const githubUrl = "tom-m-git.github.io", hostVar = window.location.host, rootPath = (hostVar == githubUrl) ? "/portfolio/" : "/";
+            const githubUrl = "tom-m-git.github.io", hostVar = window.location.host, rootPath = (hostVar == githubUrl) ? "/portfolio/" : "/", initCss = document.querySelector("link[href*='init.css']")?.getAttribute("href") ?? "404";
             
             Html = () => {
                 html = `
+                    <head><link rel="stylesheet" href="${initCss}"></head>
                     <div class="social-links">
                         <h3>Social:</h3>
                         <svg class="social-icon" viewBox="0 0 448 512" fill="#333333" style="width:2em;vertical-align:bottom;"><use xlink:href="${rootPath}lib/brands.svg#github"></use></svg>
                         <svg class="social-icon" viewBox="0 0 448 512" fill="#333333" style="width:2em;vertical-align:bottom;"><use xlink:href="${rootPath}lib/brands.svg#facebook"></use></svg>
-                        ${i18next.t('howManyApples', {count: 2})}
                     </div>
                     <div class="copyright">Copyright &copy; 2020 Tomoaki Morioka. All rights reserved.</div>
                 `;
