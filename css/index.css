@@ -1,16 +1,6 @@
 body {
   background-color: #E5E5E5;
 }
-main {
-  margin: 3rem auto auto 10%;
-}
-ul {
-  list-style: none;
-}
-nav ul li svg {
-  width: 0.7em;
-  vertical-align: text-bottom;
-}
 #background {
   position: absolute;
   width: 100%;
@@ -62,11 +52,40 @@ nav ul li svg {
 #header-subtitle {
   grid-area: subtitle;
 }
+main {
+  margin: 3rem 10% auto 10%;
+}
+ul {
+  list-style: none;
+}
+nav ul li.language-button {
+  background-color: #ffffff;
+  margin-bottom: 1rem;
+}
+nav ul li.language-button:hover {
+  background-color: #f0f0f0;
+}
+nav ul li.language-button a {
+  padding: 0.6rem;
+  height: 100%;
+  display: block;
+  width: 100%;
+  text-decoration-line: none;
+}
+nav ul li.language-button a:visited {
+  color: #333333;
+}
+nav ul li svg {
+  width: 0.7em;
+  vertical-align: text-bottom;
+  display: block;
+  float: right;
+  margin-left: 1em;
+}
 #page-footer {
   padding-left: 10%;
   padding-right: 10%;
   padding-bottom: 1rem;
-  /* background-color: #5F5F5F; */
 }
 
 @media (min-width: 450px) {

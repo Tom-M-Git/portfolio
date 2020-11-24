@@ -7,13 +7,15 @@ function Footer() {
             
             Html = () => {
                 html = `
-                    <head><link rel="stylesheet" href="${initCss}"></head>
-                    <div class="social-links">
-                        <h3>Social:</h3>
-                        <svg class="social-icon" viewBox="0 0 448 512" fill="#333333" style="width:2em;vertical-align:bottom;"><use xlink:href="${rootPath}lib/brands.svg#github"></use></svg>
-                        <svg class="social-icon" viewBox="0 0 448 512" fill="#333333" style="width:2em;vertical-align:bottom;"><use xlink:href="${rootPath}lib/brands.svg#facebook"></use></svg>
-                    </div>
-                    <div class="copyright">Copyright &copy; 2020 Tomoaki Morioka. All rights reserved.</div>
+                    <link rel="stylesheet" href="${initCss}">
+                    <section id="footer">
+                        <div class="social-links">
+                            <h3>Social:</h3>
+                            <svg class="social-icon" viewBox="0 0 448 512" fill="#333333" style="width:2em;vertical-align:bottom;"><use xlink:href="${rootPath}lib/brands.svg#github"></use></svg>
+                            <svg class="social-icon" viewBox="0 0 448 512" fill="#333333" style="width:2em;vertical-align:bottom;"><use xlink:href="${rootPath}lib/brands.svg#facebook"></use></svg>
+                        </div>
+                        <div class="copyright">Copyright &copy; 2020 Tomoaki Morioka. All rights reserved.</div>
+                    </section>
                 `;
                 return html;
             };

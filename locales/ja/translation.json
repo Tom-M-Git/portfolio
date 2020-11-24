@@ -1,5 +1,6 @@
 {
     "author":"森岡 知映",
     "howManyApples": "リンゴが{{count}}個あります。",
-    "howManyApples_plural": "リンゴが{{count}}個あります。"
+    "howManyApples_plural": "リンゴが{{count}}個あります。",
+    "chooseALanguage": "言語を選択"
 }

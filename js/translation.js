@@ -1,4 +1,5 @@
 function translationJs() {
+    /* some initialization */
     let htmlEl, isRoot, loadPath, rootPath, lng;
 
     const languageDetector = new i18nextBrowserLanguageDetector();
@@ -16,6 +17,7 @@ function translationJs() {
     ? "/portfolio/"
     : "/";
     lng = document.querySelector("html").getAttribute("lang");
+    /* ---------------------------- */
 
     /* Dealing with cookies */
     function setCookie(cname, cvalue, exminutes) {
@@ -30,7 +32,7 @@ function translationJs() {
     function generatePath(lang){
         let regex = new RegExp(`(?<=${protocolVar}//${hostVar+rootPath})[^/]*`, '');
         let newPath = entirePath.replace(regex, lang);
-        console.log(entirePath.match(regex));console.log(newPath);return newPath;
+        return newPath;
     } generatePath("en");
     /* --------------------------------- */
     i18next
@@ -52,8 +54,9 @@ function translationJs() {
                 caches: ['cookie']
             }
         }).then((t)=>{
+            // If the data-root is true, Cookie's not going to be set
             if(isRoot!="true"){
-                setCookie("i18next", "", "");setCookie("i18next", i18next.language, 60);
+                setCookie("i18next", "", "");setCookie("i18next", i18next.language, 10);
             }
             loadEverythingElse();
         });

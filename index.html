@@ -1,20 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" data-root="true">
+<html lang="en" data-root="true"><!-- If the data-root is true, Cookie's not going to be set -->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- The website's information and the personal -->
   <meta name="discription" content="Tomoaki Morioka — A translator, front-end developer, and video editor.">
   <meta name="discription" content="森岡 知映 — A translator, front-end developer, and video editor.">
   <meta name="subject" content="Portfolio">
   <meta name="author" content="Tomoaki Morioka">
   <meta name="author" content="森岡 知映">
   <meta name="rating" content="General">
+  <!-- /The website's information and the personal -->
 
   <meta http-equiv="last-modified" content="2020-11-19T08:00:00Z">
   <meta name="google" content="notranslate">
+  <!-- Canonical and Alternates -->
   <link rel="canonical" href="https://tom-m-git.github.io/portfolio/">
   <link rel="alternate" hreflang="en" href="https://tom-m-git.github.io/portfolio/en/">
   <link rel="alternate" hreflang="ja" href="https://tom-m-git.github.io/portfolio/ja/">
+  <!-- /Canonical and Alternates -->
   <meta name="title" content="Tomoaki Morioka Portfolio">
   <meta name="title" content="森岡 知映 Portfolio">
   <title>Tomoaki Morioka — Portfolio</title>
@@ -22,14 +27,18 @@
   <link rel="icon" type="image/x-icon" sizes="32x32" href="favicon-32x32.ico">
   <link rel="icon" type="image/x-icon" sizes="16x16" href="favicon-16x16.ico">
   <link rel="stylesheet" href="./css/init.css">
-  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <!-- Redirect according to the user's Cookie -->
   <script>
     const lngCache = document.cookie.match(/(?<=i18next=)[^;]*/);
     if(lngCache != null){ window.location.replace(window.location.href.replace(/index\.html/, '')+lngCache); }
   </script>
+  <!-- /Redirect according to the user's Cookie -->
 </head>
 <body>
-  <noscript>Please enable JavaScript to run this webpage.</noscript>
+  <!-- The entire visible content -->
+  <noscript><div style="position: fixed;z-index: 9999;width: 100%;padding: 3rem 0;background-color: #ffffff;text-align: center;">Please enable JavaScript to run this webpage.</div></noscript>
+  
   <div id="background"></div>
   <section id="content">
     <header id="page-header">
@@ -57,6 +66,9 @@
     </main>
     <footer id="page-footer" is="footer-component"></footer>
   </section>
+  <!-- /The entire visible content --------------------------------- -->
+  <!-- No need for a header component on this page -->
+  <!-- No need for index.js on this page so far -->
   <script src="./js/components/footer.js"></script>
   <script src="./lib/i18next.js"></script>
   <script src="./lib/i18nextHttpBackend.js"></script>

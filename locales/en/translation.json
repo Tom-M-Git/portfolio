@@ -1,5 +1,6 @@
 {
     "author":"Tomoaki Morioka",
     "howManyApples": "There is {{count}} apple",
-    "howManyApples_plural": "There are {{count}} apples"
+    "howManyApples_plural": "There are {{count}} apples",
+    "chooseALanguage": "Choose a language"
 }
