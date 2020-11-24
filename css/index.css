@@ -75,6 +75,9 @@ nav ul li.language-button a {
 nav ul li.language-button a:visited {
   color: #333333;
 }
+nav ul li.language-button a:link {
+  color: #333333;
+}
 nav ul li svg {
   width: 0.7em;
   vertical-align: text-bottom;

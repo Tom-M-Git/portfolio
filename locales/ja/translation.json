@@ -1,5 +1,11 @@
 {
     "author":"森岡 知映",
+    "portfolio": "ポートフォリオ",
+    "summary": "概要",
+    "project": "プロジェクト",
+    "about": "プロフィール",
+    "technicalDetails": "技術的詳細",
+    "other": "その他",
     "howManyApples": "リンゴが{{count}}個あります。",
     "howManyApples_plural": "リンゴが{{count}}個あります。",
     "chooseALanguage": "言語を選択"

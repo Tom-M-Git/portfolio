@@ -1,5 +1,11 @@
 {
     "author":"Tomoaki Morioka",
+    "portfolio": "Portfolio",
+    "summary": "Summary",
+    "project": "Project",
+    "about": "About",
+    "technicalDetails": "Technical Details",
+    "other": "Other",
     "howManyApples": "There is {{count}} apple",
     "howManyApples_plural": "There are {{count}} apples",
     "chooseALanguage": "Choose a language"
