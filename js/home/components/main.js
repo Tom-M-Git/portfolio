@@ -63,7 +63,7 @@ function Main () {
                                     <div class="progress" aria-label="progress">
                                         <h6 class="progress-title">i18n/l10n</h5>
                                         <div class="progress-bar">
-                                            <div class="current-progress" style="width:40%;height:100%;background-color:#d789ff;"><span class="progress-value"></h6></div>
+                                            <div class="current-progress" style="width:40%;height:100%;background-color:#fdff89;"><span class="progress-value"></h6></div>
                                         </div>
                                     </div>
                                     <div class="progress" aria-label="progress">
@@ -78,11 +78,11 @@ function Main () {
                                     <div class="progress" aria-label="progress">
                                         <h6 class="progress-title">Video Editing</h5>
                                         <div class="progress-bar">
-                                            <div class="current-progress" style="width:50%;height:100%;background-color:#ff8989;"><span class="progress-value">Non linear, Keyframes, Composition</h6></div>
+                                            <div class="current-progress" style="width:50%;height:100%;background-color:#d789ff;"><span class="progress-value">Non linear, Keyframes, Composition</h6></div>
                                         </div>
                                         <h6 class="progress-title">Audio Editing</h5>
                                             <div class="progress-bar">
-                                                <div class="current-progress" style="width:40%;height:100%;background-color:#ff8989;"><span class="progress-value">Cutting, Connecting, Fixing Sound</h6></div>
+                                                <div class="current-progress" style="width:40%;height:100%;background-color:#fdff89;"><span class="progress-value">Cutting, Connecting, Fixing Sound</h6></div>
                                             </div>
                                     </div>
                                 </section>
@@ -91,7 +91,7 @@ function Main () {
                                     <div class="progress" aria-label="progress">
                                         <h6 class="progress-title">Translation En-Ja/Ja-En</h5>
                                         <div class="progress-bar">
-                                            <div class="current-progress" style="width:50%;height:100%;background-color:#ff8989;"><span class="progress-value">Casual, Internet, Social Media</h6></div>
+                                            <div class="current-progress" style="width:50%;height:100%;background-color:#d789ff;"><span class="progress-value">Casual, Internet, Social Media</h6></div>
                                         </div>
                                     </div>
                                     <div class="progress" aria-label="progress">
@@ -112,22 +112,26 @@ function Main () {
                                     <div class="progress" aria-label="progress">
                                         <h6 class="progress-title">English</h5>
                                         <div class="progress-bar">
-                                            <div class="current-progress" style="width:70%;height:100%;background-color:#ff8989;"><span class="progress-value">Conversational (>=B2)</h6></div>
+                                            <div class="current-progress" style="width:65%;height:100%;background-color:#89e9ff;"><span class="progress-value">Conversational (>=B2)</h6></div>
                                         </div>
                                     </div>
+                                </section>
                             </section>
                         </section>
                         <section id="projects">
-                            projects has another page
+                            <h3>Projects</h3>
+                            <section id="projects-development">Web Development</section>
+                            <section id="projects-video-editing">Video Editing</section>
+                            <section id="projects-translation">Translation</section>
                         </section>
                         <section id="about">
-                            about
+                            <h3>About</h3>
                         </section>
                         <section id="technical-details">
-                            details links to another page
+                            <h3>Technical Details</h3>
                         </section>
                         <section id="other" name="other">
-                            other links to another page
+                            <h3>Other</h3>
                         </section>
                     </main>
                 `;

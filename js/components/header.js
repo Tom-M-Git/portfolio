@@ -145,6 +145,7 @@ function Header () {
                             top: 0;
                             width: 100%;
                             height: 100%;
+                            z-index: 994;
                         }
                         #modal-nav.toggled {
                             display: block;
