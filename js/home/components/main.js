@@ -47,7 +47,7 @@ function Main () {
                             font-size: small;
                         }
                     </style>
-                    <section id="main">
+                    <main id="main">
                         <section id="summary" name="summary">
                             <h3>Summary</h3>
                             <section id="skills">
@@ -129,7 +129,7 @@ function Main () {
                         <section id="other" name="other">
                             other links to another page
                         </section>
-                    </section>
+                    </main>
                 `;
                 return html;
             }
@@ -144,7 +144,7 @@ function Main () {
             }; updateComponent();
 
         }
-    }, { extends: "main" });
+    });
 }
 window.addEventListener("componentReady", ()=>{
     Main();

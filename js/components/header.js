@@ -6,8 +6,8 @@ function Header () {
             const githubUrl = "tom-m-git.github.io",
             hostVar = window.location.host,
             rootPath = (hostVar == githubUrl) ? "/portfolio/" : "/",
-            //initCss = document.querySelector("link[href*='init.css']")?.getAttribute("href") ?? "404";
             initCss = document.querySelector("link[href*='init.css']").getAttribute("href");
+            //initCss = document.querySelector("link[href*='init.css']")?.getAttribute("href") ?? "404";
 
             window.MyHeader = {}
             MyHeader.toggled = new Event("toggled");
@@ -54,7 +54,7 @@ function Header () {
                 html = `
                     <link rel="stylesheet" href="${initCss}">
                     <style>
-                        #header-header {
+                        #header {
                             grid-area: header;
                             display: grid;
                             grid-template-columns: auto;
@@ -191,11 +191,11 @@ function Header () {
                             color: #777777;
                         }
                     </style>
-                    <section id="header-header">
+                    <header id="header">
                         <img id="profile-image" src="${rootPath}assets/img/tomoaki-morioka-icon-540x540.png" alt="profile image">
                         <h1 id="header-title">${i18next.t("author")}</h1>
                         <h2 id="header-subtitle">Portfolio</h2>
-                    </section>
+                    </header>
                     <nav id="nav-menu">
                         <button id="language-button">
                             <select onchange="i18next.changeLanguage(this.value)">
@@ -234,7 +234,7 @@ function Header () {
                 modalNav.classList.toggle("toggled");
             });
         }
-    }, { extends: "header" });
+    });
 }
 window.addEventListener("componentReady", ()=>{
     Header();

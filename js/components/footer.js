@@ -37,7 +37,7 @@ function Footer() {
                             justify-content: center;
                         }
                     </style>
-                    <section id="footer">
+                    <footer id="footer">
                         <div id="social-links">
                             <h3>-Social-</h3>
                             <a href="https://github.com/Tom-M-Git" target="_blank">
@@ -48,7 +48,7 @@ function Footer() {
                             </a>
                         </div>
                         <div id="copyright">Copyright &copy; 2020 Tomoaki Morioka. All rights reserved.</div>
-                    </section>
+                    </footer>
                 `;
                 return html;
             };
@@ -64,7 +64,7 @@ function Footer() {
             
         }
     }
-    window.customElements.define('footer-component', CustomElements, { extends: "footer" });
+    window.customElements.define('footer-component', CustomElements);
 }
 window.addEventListener("componentReady", ()=>{
     Footer();
