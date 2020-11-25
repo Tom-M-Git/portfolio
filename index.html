@@ -38,7 +38,7 @@
 <body>
   <!-- The entire visible content -->
   <noscript><div style="position: fixed;z-index: 9999;width: 100%;padding: 3rem 0;background-color: #ffffff;text-align: center;">Please enable JavaScript to run this webpage.</div></noscript>
-  
+
   <div id="background"></div>
   <section id="content">
     <header id="page-header">
@@ -64,12 +64,20 @@
         </ul>
       </nav>
     </main>
-    <footer id="page-footer" is="footer-component"></footer>
+    <footer id="page-footer">
+      <div id="social-links">
+          <h3>Social:</h3>
+          <svg class="social-icon" viewBox="0 0 448 512" fill="#333333" style="width:2em;vertical-align:bottom;"><use xlink:href="./lib/brands.svg#github"></use></svg>
+          <svg class="social-icon" viewBox="0 0 448 512" fill="#333333" style="width:2em;vertical-align:bottom;"><use xlink:href="./lib/brands.svg#facebook"></use></svg>
+      </div>
+      <div class="copyright">Copyright &copy; 2020 Tomoaki Morioka. All rights reserved.</div>
+    </footer>
   </section>
   <!-- /The entire visible content --------------------------------- -->
   <!-- No need for a header component on this page -->
+  <!-- No need for a footer component on this page -->
   <!-- No need for index.js on this page so far -->
-  <script src="./js/components/footer.js"></script>
+  
   <script src="./lib/i18next.js"></script>
   <script src="./lib/i18nextHttpBackend.js"></script>
   <script src="./lib/i18nextBrowserLanguageDetector.min.js"></script>

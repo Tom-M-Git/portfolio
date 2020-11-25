@@ -2,7 +2,7 @@ function Header () {
     window.customElements.define('header-component', class extends HTMLElement {
         constructor(){
             super();
-            let Html, html, template, shadow, updateComponent, navMenuList, modalNav, createModalNav, menuButton;
+            let Html, html, template, shadow, updateComponent, navMenuList, modalNav, modalNavMenu, menuButton;
             const githubUrl = "tom-m-git.github.io",
             hostVar = window.location.host,
             rootPath = (hostVar == githubUrl) ? "/portfolio/" : "/",
@@ -13,24 +13,34 @@ function Header () {
             navMenuList =`
                 <ul class="nav-menu-list">
                     <li>
-                        <svg viewBox="0 0 448 512" fill="#777777" style="width:35px;"><use xlink:href="${rootPath}lib/solid.svg#list"></use></svg>
-                        ${i18next.t("summary")}
+                        <a href="#summary">
+                            <svg viewBox="0 0 448 512" fill="#777777" style="width:35px;"><use xlink:href="${rootPath}lib/solid.svg#list"></use></svg>
+                            ${i18next.t("summary")}
+                        </a>
                     </li>
                     <li>
-                        <svg viewBox="0 0 448 512" fill="#777777" style="width:35px;"><use xlink:href="${rootPath}lib/solid.svg#project-diagram"></use></svg>
-                        ${i18next.t("project")}
+                        <a href="#project">
+                            <svg viewBox="0 0 448 512" fill="#777777" style="width:35px;"><use xlink:href="${rootPath}lib/solid.svg#project-diagram"></use></svg>
+                            ${i18next.t("project")}
+                        </a>
                     </li>
                     <li>
-                        <svg viewBox="0 0 448 512" fill="#777777" style="width:35px;"><use xlink:href="${rootPath}lib/solid.svg#user-circle"></use></svg>
-                        ${i18next.t("about")}
+                        <a href="#about">
+                            <svg viewBox="0 0 448 512" fill="#777777" style="width:35px;"><use xlink:href="${rootPath}lib/solid.svg#user-circle"></use></svg>
+                            ${i18next.t("about")}
+                        </a>
                     </li>
                     <li>
-                        <svg viewBox="0 0 448 512" fill="#777777" style="width:35px;"><use xlink:href="${rootPath}lib/solid.svg#code"></use></svg>
-                        ${i18next.t("technicalDetails")}
+                        <a href="#technical-details">
+                            <svg viewBox="0 0 448 512" fill="#777777" style="width:35px;"><use xlink:href="${rootPath}lib/solid.svg#code"></use></svg>
+                            ${i18next.t("technicalDetails")}
+                        </a>
                     </li>
                     <li>
-                        <svg viewBox="0 0 448 512" fill="#777777" style="width:35px;"><use xlink:href="${rootPath}lib/solid.svg#external-link-alt"></use></svg>
-                        ${i18next.t("other")}
+                        <a href="#other">
+                            <svg viewBox="0 0 448 512" fill="#777777" style="width:35px;"><use xlink:href="${rootPath}lib/solid.svg#external-link-alt"></use></svg>
+                            ${i18next.t("other")}
+                        </a>
                     </li>
                 </ul>
             `;
@@ -154,6 +164,25 @@ function Header () {
                         .nav-menu-list {
                             width: 100%;
                             background-color: #ffffff;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            padding: 0.5em 1em;
+                            border-radius: 0 0 2px 2px;
+                        }
+                        .nav-menu-list > li {
+                            width: 100%;
+                            border-bottom: 1px inset;
+                        }
+                        .nav-menu-list a {
+                            text-decoration-line: none; 
+                        }
+                        .nav-menu-list a svg {
+                            vertical-align: middle;
+                            margin-right: 1em;
+                        }
+                        .nav-menu-list a:link, .nav-menu-list a:visited {
+                            color: #777777;
                         }
                     </style>
                     <section id="header-header">
@@ -189,8 +218,11 @@ function Header () {
                 shadow.appendChild(template.content.cloneNode(true));
             }; updateComponent();
 
+            
             menuButton = shadow.querySelector("#menu-button");
             modalNav = shadow.querySelector("#modal-nav");
+            modalNavMenu = shadow.querySelector("#modal-nav .nav-menu-list");
+            modalNavMenu.addEventListener("click", ()=>{window.dispatchEvent(MyEvents.toggled)});
             window.addEventListener("toggled",()=>{
                 menuButton.classList.toggle("active");
                 modalNav.classList.toggle("toggled");
