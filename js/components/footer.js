@@ -3,7 +3,9 @@ function Footer() {
         constructor(){
             super();
             let Html, html, template, shadow, updateComponent;
-            const githubUrl = "tom-m-git.github.io", hostVar = window.location.host, rootPath = (hostVar == githubUrl) ? "/portfolio/" : "/", initCss = document.querySelector("link[href*='init.css']")?.getAttribute("href") ?? "404";
+            const githubUrl = "tom-m-git.github.io", hostVar = window.location.host, rootPath = (hostVar == githubUrl) ? "/portfolio/" : "/",
+            //initCss = document.querySelector("link[href*='init.css']")?.getAttribute("href") ?? "404";
+            initCss = document.querySelector("link[href*='init.css']").getAttribute("href");
             
             Html = () => {
                 html = `
@@ -64,6 +66,6 @@ function Footer() {
     }
     window.customElements.define('footer-component', CustomElements, { extends: "footer" });
 }
-document.querySelector("html").addEventListener("componentReady", ()=>{
+window.addEventListener("componentReady", ()=>{
     Footer();
 });

@@ -6,38 +6,42 @@ function Header () {
             const githubUrl = "tom-m-git.github.io",
             hostVar = window.location.host,
             rootPath = (hostVar == githubUrl) ? "/portfolio/" : "/",
-            initCss = document.querySelector("link[href*='init.css']")?.getAttribute("href") ?? "404";
-            
-            window.MyEvents = {}
-            MyEvents.toggled = new Event("toggled");
+            //initCss = document.querySelector("link[href*='init.css']")?.getAttribute("href") ?? "404";
+            initCss = document.querySelector("link[href*='init.css']").getAttribute("href");
+
+            window.MyHeader = {}
+            MyHeader.toggled = new Event("toggled");
+            MyHeader.scrollIntoViewAlt = (host, id) => {
+                document.querySelector(host).shadowRoot.querySelector(id).scrollIntoView()
+            }
             navMenuList =`
                 <ul class="nav-menu-list">
                     <li>
-                        <a href="#summary">
+                        <a href="#summary" onclick="MyHeader.scrollIntoViewAlt('#page-main', '#summary')">
                             <svg viewBox="0 0 448 512" fill="#777777" style="width:35px;"><use xlink:href="${rootPath}lib/solid.svg#list"></use></svg>
                             ${i18next.t("summary")}
                         </a>
                     </li>
                     <li>
-                        <a href="#project">
+                        <a href="#projects" onclick="MyHeader.scrollIntoViewAlt('#page-main', '#projects')">
                             <svg viewBox="0 0 448 512" fill="#777777" style="width:35px;"><use xlink:href="${rootPath}lib/solid.svg#project-diagram"></use></svg>
-                            ${i18next.t("project")}
+                            ${i18next.t("projects")}
                         </a>
                     </li>
                     <li>
-                        <a href="#about">
+                        <a href="#about" onclick="MyHeader.scrollIntoViewAlt('#page-main', '#about')">
                             <svg viewBox="0 0 448 512" fill="#777777" style="width:35px;"><use xlink:href="${rootPath}lib/solid.svg#user-circle"></use></svg>
                             ${i18next.t("about")}
                         </a>
                     </li>
                     <li>
-                        <a href="#technical-details">
+                        <a href="#technical-details" onclick="MyHeader.scrollIntoViewAlt('#page-main', '#technical-details')">
                             <svg viewBox="0 0 448 512" fill="#777777" style="width:35px;"><use xlink:href="${rootPath}lib/solid.svg#code"></use></svg>
                             ${i18next.t("technicalDetails")}
                         </a>
                     </li>
                     <li>
-                        <a href="#other">
+                        <a href="#other" onclick="MyHeader.scrollIntoViewAlt('#page-main', '#other')">
                             <svg viewBox="0 0 448 512" fill="#777777" style="width:35px;"><use xlink:href="${rootPath}lib/solid.svg#external-link-alt"></use></svg>
                             ${i18next.t("other")}
                         </a>
@@ -176,6 +180,8 @@ function Header () {
                         }
                         .nav-menu-list a {
                             text-decoration-line: none; 
+                            display: inline-block;
+                            width: 100%;
                         }
                         .nav-menu-list a svg {
                             vertical-align: middle;
@@ -199,12 +205,12 @@ function Header () {
                             </select>
                             <svg viewBox="0 0 448 512" fill="#ffffff" style="width:35px;"><use xlink:href="${rootPath}lib/solid.svg#globe"></use></svg>
                         </button>
-                        <button id="menu-button" class="" onclick="window.dispatchEvent(MyEvents.toggled)">
+                        <button id="menu-button" class="" onclick="window.dispatchEvent(MyHeader.toggled)">
                             <svg viewBox="0 0 448 512" fill="#ffffff" style="width:35px;"><use xlink:href="${rootPath}lib/solid.svg#bars"></use></svg>
                         </button>
                         ${navMenuList}
                     </nav>
-                    <nav id="modal-nav"><div id="nav-background" onclick="window.dispatchEvent(MyEvents.toggled)"></div>${navMenuList}</nav>
+                    <nav id="modal-nav"><div id="nav-background" onclick="window.dispatchEvent(MyHeader.toggled)"></div>${navMenuList}</nav>
                 `;
                 return html;
             }
@@ -222,7 +228,7 @@ function Header () {
             menuButton = shadow.querySelector("#menu-button");
             modalNav = shadow.querySelector("#modal-nav");
             modalNavMenu = shadow.querySelector("#modal-nav .nav-menu-list");
-            modalNavMenu.addEventListener("click", ()=>{window.dispatchEvent(MyEvents.toggled)});
+            modalNavMenu.addEventListener("click", ()=>{window.dispatchEvent(MyHeader.toggled)});
             window.addEventListener("toggled",()=>{
                 menuButton.classList.toggle("active");
                 modalNav.classList.toggle("toggled");
@@ -230,6 +236,6 @@ function Header () {
         }
     }, { extends: "header" });
 }
-document.querySelector("html").addEventListener("componentReady", ()=>{
+window.addEventListener("componentReady", ()=>{
     Header();
 });

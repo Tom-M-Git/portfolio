@@ -27,13 +27,15 @@ function translationJs() {
         document.cookie = cname + "=" + cvalue + ";" + expires + ";path=" + rootPath;
     }
     /* -------------------- */
-    
+
     /* Creating Path to the same page in another lang */
     function generatePath(lang){
-        let regex = new RegExp(`(?<=${protocolVar}//${hostVar+rootPath})[^/]*`, '');
-        let newPath = entirePath.replace(regex, lang);
+        let regex = new RegExp(`(${protocolVar}//${hostVar+rootPath})[^/]*`, '');
+        let partialPath = entirePath.replace(regex, lang);
+        let newPath = `${window.location.origin + rootPath}${partialPath}`;
+        console.log("partial: "+partialPath+", "+"full: "+newPath);
         return newPath;
-    } generatePath("en");
+    } generatePath("ja");
     /* --------------------------------- */
     i18next
         .use(i18nextHttpBackend)
@@ -61,7 +63,7 @@ function translationJs() {
             loadEverythingElse();
         });
     function loadEverythingElse () {
-        htmlEl.dispatchEvent(componentReady);
+        window.dispatchEvent(componentReady);
         i18next.on("languageChanged", ()=>{
             window.open(generatePath(i18next.language), '_self')
         })
