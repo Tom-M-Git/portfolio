@@ -46,6 +46,13 @@ function Main () {
                             width: max-content;
                             font-size: small;
                         }
+                        .collapsed-section-title > *{
+                            display: inline-block;
+                        }
+                        .ul-with-title::before {
+                            content: attr(aria-label);
+                            
+                        }
                     </style>
                     <main id="main">
                         <section id="summary" name="summary">
@@ -55,22 +62,40 @@ function Main () {
                                 <section id="skills-web" class="skills-category">
                                     <h5>WEB</h5>
                                     <div class="progress" aria-label="progress">
-                                        <h6 class="progress-title">Front-End Development (Vanilla JS)</h5>
+                                        <h6 class="progress-title">Front-End Development</h5>
                                         <div class="progress-bar" >
                                             <div class="current-progress" style="width:60%;height:100%;background-color:#89e9ff;"><span class="progress-value">Intermediate</h6></div>
                                         </div>
+                                        <details>
+                                            <ul>
+                                                <li><label for="progress-react">HTML: </label><progress id="progress-react" max="100" value="30"></progress></li>
+                                                <li><label for="progress-react">CSS: </label><progress id="progress-react" max="100" value="30"></progress></li>
+                                                <li><label for="progress-react">Javascript: </label><progress id="progress-react" max="100" value="30"></progress></li>
+                                                <li><label for="progress-react">React: </label><progress id="progress-react" max="100" value="30"></progress></li>
+                                            </ul>
+                                        </details>
                                     </div>
                                     <div class="progress" aria-label="progress">
                                         <h6 class="progress-title">i18n/l10n</h5>
                                         <div class="progress-bar">
                                             <div class="current-progress" style="width:40%;height:100%;background-color:#fdff89;"><span class="progress-value"></h6></div>
                                         </div>
+                                        <details>
+                                            <ul>
+                                                <li><label for="progress-react">i18next: </label><progress id="progress-react" max="100" value="30"></progress></li>
+                                            </ul>
+                                        </details>
                                     </div>
                                     <div class="progress" aria-label="progress">
                                         <h6 class="progress-title">UI/UX</h5>
                                         <div class="progress-bar">
                                             <div class="current-progress" style="width:30%;height:100%;background-color:#fdff89;"><span class="progress-value"></h6></div>
                                         </div>
+                                        <details>
+                                            <ul>
+                                                <li><label for="progress-react">lorem: </label><progress id="progress-react" max="100" value="30"></progress></li>
+                                            </ul>
+                                        </details>
                                     </div>
                                 </section>
                                 <section id="skills-dtp" class="skills-category">
@@ -80,10 +105,20 @@ function Main () {
                                         <div class="progress-bar">
                                             <div class="current-progress" style="width:50%;height:100%;background-color:#d789ff;"><span class="progress-value">Non linear, Keyframes, Composition</h6></div>
                                         </div>
+                                        <details>
+                                            <ul>
+                                                <li><label for="progress-react">lorem: </label><progress id="progress-react" max="100" value="30"></progress></li>
+                                            </ul>
+                                        </details>
                                         <h6 class="progress-title">Audio Editing</h5>
-                                            <div class="progress-bar">
-                                                <div class="current-progress" style="width:40%;height:100%;background-color:#fdff89;"><span class="progress-value">Cutting, Connecting, Fixing Sound</h6></div>
-                                            </div>
+                                        <div class="progress-bar">
+                                            <div class="current-progress" style="width:40%;height:100%;background-color:#fdff89;"><span class="progress-value">Cutting, Connecting, Fixing Sound</h6></div>
+                                        </div>
+                                        <details>
+                                            <ul>
+                                                <li><label for="progress-react">lorem: </label><progress id="progress-react" max="100" value="30"></progress></li>
+                                            </ul>
+                                        </details>
                                     </div>
                                 </section>
                                 <section id="skills-translation" class="skills-category">
@@ -99,6 +134,11 @@ function Main () {
                                         <div class="progress-bar">
                                             <div class="current-progress" style="width:20%;height:100%;background-color:#ff8989;"><span class="progress-value">Beginner</h6></div>
                                         </div>
+                                        <details>
+                                            <ul>
+                                                <li><label for="progress-react">lorem: </label><progress id="progress-react" max="100" value="30"></progress></li>
+                                            </ul>
+                                        </details>
                                     </div>
                                 </section>
                                 <section id="skills-language" class="skills-category">
@@ -126,12 +166,24 @@ function Main () {
                         </section>
                         <section id="about">
                             <h3>About</h3>
+                            <details>
+                                <summary>Education</summary>
+                                <p></p>
+                            </details>
                         </section>
                         <section id="technical-details">
-                            <h3>Technical Details</h3>
+                            <details>
+                                <summary class="collapsed-section-title"><h3>Technical Details</h3></summary>
+                            </details>
                         </section>
                         <section id="other" name="other">
-                            <h3>Other</h3>
+                            <details>
+                                <summary class="collapsed-section-title"><h3>Other</h3></summary>
+                                <ul class="ul-with-title" aria-label="Extertal Links">
+                                    <li>Book Shelf</li>
+                                    <li>Personal Blog</li>
+                                </ul>
+                            </details>
                         </section>
                     </main>
                 `;
