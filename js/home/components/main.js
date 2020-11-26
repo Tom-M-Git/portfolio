@@ -16,6 +16,9 @@ function Main () {
                         #main {
                             color: #444444;
                         }
+                        details summary {
+                            cursor: pointer;
+                        }
                         #summary {
                             display: grid;
                             grid-template-columns: auto;
@@ -53,8 +56,17 @@ function Main () {
                         .ul-with-title::before {
                             content: attr(aria-label);
                         }
+                        #about p, #about address {
+                            margin: 0 0 1rem 1rem;
+                            line-height: 1.5rem;
+                        }
+                        #about-about ul {
+                            margin: 0 0 1rem 0;
+                        }
                     </style>
+
                     <main id="main">
+
                         <section id="summary" name="summary">
                             <h2>Summary</h2>
                             <section id="skills">
@@ -69,6 +81,7 @@ function Main () {
                                                         <div class="current-progress" style="width:60%;height:100%;background-color:#89e9ff;"><span class="progress-value">Intermediate</span></div>
                                                     </div>
                                                     <details>
+                                                        <summary>Details</summary>
                                                         <ul>
                                                             <li><label for="progress-react">HTML: </label><progress max="100" value="30"></progress></li>
                                                             <li><label for="progress-react">CSS: </label><progress max="100" value="30"></progress></li>
@@ -85,6 +98,7 @@ function Main () {
                                                         <div class="current-progress" style="width:40%;height:100%;background-color:#fdff89;"><span class="progress-value"></span></div>
                                                     </div>
                                                     <details>
+                                                        <summary>Details</summary>
                                                         <ul>
                                                             <li><label for="progress-react">i18next: </label><progress max="100" value="30"></progress></li>
                                                         </ul>
@@ -110,6 +124,7 @@ function Main () {
                                                         <div class="current-progress" style="width:50%;height:100%;background-color:#d789ff;"><span class="progress-value">Non linear, Keyframes, Composition</span></div>
                                                     </div>
                                                     <details>
+                                                        <summary>Details</summary>
                                                         <ul>
                                                             <li><label for="progress-react">lorem: </label><progress max="100" value="30"></progress></li>
                                                         </ul>
@@ -123,6 +138,7 @@ function Main () {
                                                         <div class="current-progress" style="width:40%;height:100%;background-color:#fdff89;"><span class="progress-value">Cutting, Connecting, Fixing Sound</span></div>
                                                     </div>
                                                     <details>
+                                                        <summary>Details</summary>
                                                         <ul>
                                                             <li><label for="progress-react">lorem: </label><progress max="100" value="30"></progress></li>
                                                         </ul>
@@ -169,6 +185,7 @@ function Main () {
                                                         <div class="current-progress" style="width:20%;height:100%;background-color:#ff8989;"><span class="progress-value">Beginner</span></div>
                                                     </div>
                                                     <details>
+                                                        <summary>Details</summary>
                                                         <ul>
                                                             <li><label for="progress-react">lorem: </label><progress max="100" value="30"></progress></li>
                                                         </ul>
@@ -200,38 +217,74 @@ function Main () {
                                 </ul>
                             </section>
                         </section>
+<!-- ======================================================= -->
                         <section id="projects">
                             <h2>Projects</h2>
                             <section id="projects-development">
-                                <h3>Web Development</h3>
+                                <header>
+                                    <h3>Web Development</h3>
+                                </header>
+                                <ul>
+                                    <li></li>
+                                    <li></li>
+                                    <li><a href="#">See all</a></li>
+                                </ul>
                             </section>
                             <section id="projects-video-editing">
-                                <h3>Video Editing</h3>
+                                <header>
+                                    <h3>Video Editing</h3>
+                                </header>
+                                <ul>
+                                    <li></li>
+                                    <li></li>
+                                    <li><a href="#">See all</a></li>
+                                </ul>
                             </section>
                             <section id="projects-translation">
-                                <h3>Translation</h3>
+                                <header>
+                                    <h3>Translation</h3>
+                                </header>
+                                <ul>
+                                    <li></li>
+                                    <li><a href="#">See all</a></li>
+                                </ul>
                             </section>
                         </section>
+<!-- ======================================================= -->
                         <section id="about">
                             <h2>About</h2>
                             <section id="about-about">
                                 <h3>About the author</h3><hr>
-                                <p>something</p>
+                                <h4>Basic Information: </h4>
+                                <ul>
+                                    <li>Name: Tomoaki Morioka (森岡 知映)</li>
+                                    <li>Gender: Male</li>
+                                    <li>From: Japan</li>
+                                </ul>
+                                <h4>Department: </h4>
+                                <p>En-Ja/Ja-En Translation, Front-End Development, Video Editing</p>
+                                <h4>Languages: </h4>
+                                <p>Native in Japanese; Can speak conversational English (>=B2 in CEFR)<br>
+                                    (Reading/Writing English requiring dictionaries and understanding daily conversation in English.<br>
+                                    Translating English-Japanese/Japanese-English, currently at least more accurate than machine translators. It's been improving over time.)</p>
+                                <h4>Web: </h4>
+                                <p>Basic knowledge of front-end development, design, building a website and deployment—HTML, CSS, Javascript<br>
+                                    Learning: Front-end, WordPress, and Internationalization/Localization</p>
+                                <h4>Birth: </h4>
+                                <p>June 17, 1994</p>
+                                <h4>Contact: </h4>
+                                <address>
+                                    <a href="mailto:tomoaki.morioka.email@gmail.com">tomoaki.morioka.email@gmail.com</a>
+                                </address>
+                                <h4></h4>
+                                <p>I'm ready to learn new skills.</p>
                             </section>
                             <section id="about-education">
                                 <h3>Education</h3><hr>
                                 <p>High School Diploma — Daimon High School of Hiroshima, Japan — in March, 2013</p>
                             </section>
-                            <section id="about-experience">
-                                <details>
-                                    <summary class="collapsed-section-title"><h3>Experience</h3></summary>
-                                    <hr>
-                                    <ul>
-                                        <li></li>
-                                    </ul>
-                                </details>
-                            </section>
                         </section>
+<!-- ======================================================= -->
                         <section id="technical-details">
                             <details>
                                 <summary class="collapsed-section-title"><h2>Technical Details</h2></summary>
@@ -245,6 +298,7 @@ function Main () {
                                 </ul>
                             </details>
                         </section>
+<!-- ======================================================= -->
                         <section id="other" name="other">
                             <details>
                                 <summary class="collapsed-section-title"><h2>Other</h2></summary>
