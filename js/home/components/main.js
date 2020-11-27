@@ -48,8 +48,6 @@ function Main () {
                         }
                         .progress-value {
                             position: absolute;
-                            left: 0;
-                            right: 0;
                             height: auto;
                             margin: auto;
                             width: max-content;
@@ -110,7 +108,7 @@ function Main () {
                             list-style: none;
                             display: grid;
                             grid-template-columns: minmax(auto, 640px);
-                            grid-auto-rows: minmax(320px, auto);
+                            grid-auto-rows: 1fr;
                         }
                         .projects-card {
                             display: grid;
