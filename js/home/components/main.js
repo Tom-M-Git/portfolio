@@ -68,8 +68,73 @@ function Main () {
                         #about-about ul {
                             margin: 0 0 1rem 0;
                         }
-                        #projects ul {
+                        .projects-category {
+                            display: grid;
+                            grid-template-columns: auto auto;
+                            grid-template-areas:
+                                'header .'
+                                'list list';
+                        }
+                        .projects-header {
+                            grid-area: header;
+                            display: grid;
+                            width: 220px;
+                            height: 130px;
+                            grid-template-columns: 1fr auto;
+                            grid-template-rows: 3fr 1fr;
+                            grid-template-areas:
+                                'icon arrow'
+                                'title arrow';
+                            align-items: center;
+                            cursor: pointer;
+                        }
+                        #projects-header-dev {
+                            background-color: #fdff89;
+                        }
+                        #projects-header-video {
+                            background-color: #9cadff;
+                        }
+                        .projects-category-icon {
+                            grid-area: icon;
+                        }
+                        .projects-category-title {
+                            grid-area: title;
+                        }
+                        .projects-category-arrow {
+                            grid-area: arrow;
+                            height: 100%;
+                            background-color: rgba(0,0,0,0.1);
+                        }
+                        .projects-list {
+                            grid-area: list;
                             list-style: none;
+                            display: grid;
+                            grid-template-columns: minmax(auto, 640px);
+                            grid-auto-rows: minmax(320px, auto);
+                        }
+                        .projects-card {
+                            display: grid;
+                            grid-template-rows: auto;
+                            grid-template-areas: 'card';
+                            color: #ffffff;
+                        }
+                        .projects-thumb {
+                            grid-area: card;
+                        }
+                        .projects-title {
+                            background-color: rgba(0,0,0,0.7);
+                            grid-area: card;
+                            align-self: end;
+                            min-height: 3em;
+                        }
+                        .see-all {
+                            height: 100%;
+                            background-color: rgba(0,0,0,0.7);
+                        }
+                        .see-all-text {
+                            grid-area: card;
+                            align-self: center;
+                            justify-self: center;
                         }
                     </style>
 
@@ -228,63 +293,67 @@ function Main () {
 <!-- ======================================================= -->
                         <section id="projects">
                             <h2>Projects</h2>
-                            <section id="projects-development">
-                                <header>
-                                    <h3>Web Development</h3>
+                            <section class="projects-category" id="projects-development">
+                                <header class="projects-header" id="projects-header-dev">
+                                   <svg class="projects-category-icon" viewBox="0 0 640 512" fill="#444444" style="width:60px;"><use xlink:href="${rootPath}lib/solid.svg#code"></use></svg>
+                                   <h3 class="projects-category-title">Web Development</h3>
+                                   <svg class="projects-category-arrow" viewBox="0 0 320 512" fill="#444444" style="width:20px;"><use xlink:href="${rootPath}lib/solid.svg#chevron-right"></use></svg>
                                 </header>
-                                <ul>
+                                <ul class="projects-list">
                                     <li>
                                         <a href="#">
-                                            <div>
-                                                <img src="${projects.projects.development.i18nWithReactIntlAndMultilingualPosts.thumbnail}">
-                                                <span>${projects.projects.development.i18nWithReactIntlAndMultilingualPosts.name}</span>
+                                            <div class="projects-card">
+                                                <img class="projects-thumb" src="${projects.projects.development.i18nWithReactIntlAndMultilingualPosts.thumbnail}">
+                                                <span class="projects-title">${projects.projects.development.i18nWithReactIntlAndMultilingualPosts.name}</span>
                                             </div>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <div>
-                                                <img src="${projects.projects.development.implementingGettextjs.thumbnail}">
-                                                <span>${projects.projects.development.implementingGettextjs.name}</span>
+                                            <div class="projects-card">
+                                                <img class="projects-thumb" src="${projects.projects.development.implementingGettextjs.thumbnail}">
+                                                <span class="projects-title">${projects.projects.development.implementingGettextjs.name}</span>
                                             </div>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <div>
-                                                <span>See all</span>
-                                                <div></div>
+                                            <div class="projects-card see-all">
+                                                <div class="projects-thumb"></div>
+                                                <span class="see-all-text">See all</span>
                                             </div>
                                         </a>
                                     </li>
                                 </ul>
                             </section>
-                            <section id="projects-video-editing">
-                                <header>
-                                    <h3>Video Editing</h3>
+                            <section class="projects-category" id="projects-video-editing">
+                                <header class="projects-header" id="projects-header-video">
+                                    <svg class="projects-category-icon" viewBox="0 0 512 512" fill="#444444" style="width:60px;"><use xlink:href="${rootPath}lib/solid.svg#film"></use></svg>
+                                    <h3 class="projects-category-title">Video Editing</h3>
+                                    <svg class="projects-category-arrow" viewBox="0 0 320 512" fill="#444444" style="width:20px;"><use xlink:href="${rootPath}lib/solid.svg#chevron-right"></use></svg>
                                 </header>
-                                <ul>
+                                <ul class="projects-list">
                                     <li>
                                         <a href="#">
-                                            <div>
-                                                <img src="${projects.projects.videos.musashiXExpress.thumbnail}">
-                                                <span>${projects.projects.videos.musashiXExpress.name}</span>
+                                            <div class="projects-card">
+                                                <img class="projects-thumb" src="${projects.projects.videos.musashiXExpress.thumbnail}">
+                                                <span class="projects-title">${projects.projects.videos.musashiXExpress.name}</span>
                                             </div>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <div>
-                                                <img src="${projects.projects.videos.musashiVol2.thumbnail}">
-                                                <span>${projects.projects.videos.musashiVol2.name}</span>
+                                            <div class="projects-card">
+                                                <img class="projects-thumb" src="${projects.projects.videos.musashiVol2.thumbnail}">
+                                                <span class="projects-title">${projects.projects.videos.musashiVol2.name}</span>
                                             </div>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <div>
-                                                <span>See all</span>
-                                                <div></div>
+                                            <div class="projects-card see-all">
+                                                <div class="projects-thumb"></div>
+                                                <span class="see-all-text">See all</span>
                                             </div>
                                         </a>
                                     </li>
