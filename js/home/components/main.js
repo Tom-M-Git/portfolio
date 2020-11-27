@@ -8,6 +8,8 @@ function Main () {
             rootPath = (hostVar == githubUrl) ? "/portfolio/" : "/",
             //initCss = document.querySelector("link[href*='init.css']")?.outerHTML ?? "404";
             initCss = document.querySelector("link[href*='init.css']").outerHTML;
+            const projects = new Projects();
+            console.log(projects.projects.development.i18nWithReactIntlAndMultilingualPosts);
 
             Html = () => {
                 html = `
@@ -15,6 +17,9 @@ function Main () {
                     <style>
                         #main {
                             color: #444444;
+                        }
+                        img {
+                            max-width: 100%;
                         }
                         details summary {
                             cursor: pointer;
@@ -62,6 +67,9 @@ function Main () {
                         }
                         #about-about ul {
                             margin: 0 0 1rem 0;
+                        }
+                        #projects ul {
+                            list-style: none;
                         }
                     </style>
 
@@ -225,9 +233,30 @@ function Main () {
                                     <h3>Web Development</h3>
                                 </header>
                                 <ul>
-                                    <li></li>
-                                    <li></li>
-                                    <li><a href="#">See all</a></li>
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <img src="${projects.projects.development.i18nWithReactIntlAndMultilingualPosts.thumbnail}">
+                                                <span>${projects.projects.development.i18nWithReactIntlAndMultilingualPosts.name}</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <img src="${projects.projects.development.implementingGettextjs.thumbnail}">
+                                                <span>${projects.projects.development.implementingGettextjs.name}</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <span>See all</span>
+                                                <div></div>
+                                            </div>
+                                        </a>
+                                    </li>
                                 </ul>
                             </section>
                             <section id="projects-video-editing">
@@ -235,18 +264,30 @@ function Main () {
                                     <h3>Video Editing</h3>
                                 </header>
                                 <ul>
-                                    <li></li>
-                                    <li></li>
-                                    <li><a href="#">See all</a></li>
-                                </ul>
-                            </section>
-                            <section id="projects-translation">
-                                <header>
-                                    <h3>Translation</h3>
-                                </header>
-                                <ul>
-                                    <li></li>
-                                    <li><a href="#">See all</a></li>
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <img src="${projects.projects.videos.musashiXExpress.thumbnail}">
+                                                <span>${projects.projects.videos.musashiXExpress.name}</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <img src="${projects.projects.videos.musashiVol2.thumbnail}">
+                                                <span>${projects.projects.videos.musashiVol2.name}</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <div>
+                                                <span>See all</span>
+                                                <div></div>
+                                            </div>
+                                        </a>
+                                    </li>
                                 </ul>
                             </section>
                         </section>
@@ -260,6 +301,7 @@ function Main () {
                                     <li>Name: Tomoaki Morioka (森岡 知映)</li>
                                     <li>Gender: Male</li>
                                     <li>From: Japan</li>
+                                    <li>Birth: June 17, 1994</li>
                                 </ul>
                                 <h4>Department: </h4>
                                 <p>En-Ja/Ja-En Translation, Front-End Development, Video Editing</p>
@@ -270,14 +312,10 @@ function Main () {
                                 <h4>Web: </h4>
                                 <p>Basic knowledge of front-end development, design, building a website and deployment—HTML, CSS, Javascript<br>
                                     Learning: Front-end, WordPress, and Internationalization/Localization</p>
-                                <h4>Birth: </h4>
-                                <p>June 17, 1994</p>
                                 <h4>Contact: </h4>
                                 <address>
                                     <a href="mailto:tomoaki.morioka.email@gmail.com">tomoaki.morioka.email@gmail.com</a>
                                 </address>
-                                <h4></h4>
-                                <p>I'm ready to learn new skills.</p>
                             </section>
                             <section id="about-education">
                                 <h3>Education</h3><hr>

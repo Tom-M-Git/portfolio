@@ -195,7 +195,7 @@ function Header () {
                     <header id="header">
                         <img id="profile-image" src="${rootPath}assets/img/tomoaki-morioka-icon-540x540.png" alt="profile image">
                         <h1 id="header-title">${i18next.t("author")}</h1>
-                        <p id="header-subtitle">Portfolio</p>
+                        <p id="header-subtitle">${i18next.t("siteSubtitle")}</p>
                     </header>
                     <nav id="nav-menu">
                         <button id="language-button">
