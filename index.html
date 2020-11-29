@@ -30,8 +30,11 @@
   <link rel="stylesheet" href="./css/index.css">
   <!-- Redirect according to the user's Cookie -->
   <script>
-    const lngCache = document.cookie.match(new RegExp("(i18next=)[^;]+", ""))[0].replace("i18next=", "");
-    if(lngCache != null){ window.location.replace(window.location.href.replace(/index\.html/, '')+lngCache); }
+    let lngCache = document.cookie.match(new RegExp("(i18next=)[^;]+", ""));
+    if(lngCache != null){
+      lngCache = lngCache[0].replace("i18next=", "");
+      window.location.replace(window.location.href.replace(/index\.html|\?.*$/g, '')+lngCache);
+    }
   </script>
   <!-- /Redirect according to the user's Cookie -->
 </head>
