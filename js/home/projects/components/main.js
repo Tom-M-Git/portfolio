@@ -118,6 +118,8 @@ function Main () {
                     <style>
                         #main {
                             color: #444444;
+                            background-color: #ffffff;
+                            padding: 1rem;
                         }
                         img {
                             max-width: 100%;
