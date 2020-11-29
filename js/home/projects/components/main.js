@@ -210,6 +210,15 @@ function Main () {
                             background-color: rgba(0,0,0,0.5);
                             cursor: pointer;
                         }
+                        #close-button {
+                            position: fixed;
+                            bottom: 2rem;
+                            right: 2rem;
+                            transform: rotate(45deg);
+                            z-index: 998;
+                            font-size: 3rem;
+                            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+                        }
                         #modal-container {
                             position: relative;
                             width: 100%;
@@ -238,7 +247,7 @@ function Main () {
                             ${chooseCategory()}
 <!-- ======================================================= -->
                             <section id="projects-modal" class="">
-                                <div id="modal-background" onclick="MyMain.toggleModal()"></div>
+                                <div id="modal-background" onclick="MyMain.toggleModal()"><span id="close-button">+</span></div>
                                 <div id="modal-container">
 
                                 </div>

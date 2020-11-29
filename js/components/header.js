@@ -12,7 +12,7 @@ function Header () {
             window.MyHeader = {}
             MyHeader.toggled = new Event("toggled");
             MyHeader.scrollIntoViewAlt = (host, id) => {
-                if(window.location.pathname != new RegExp( `${rootPath}[^/]+/[^/]*`, "i") ){
+                if(window.location.pathname != window.location.pathname.match(new RegExp( `^${rootPath}[^/]+/|^${rootPath}[^/]+/index.html`, "i")) ){
                     window.open("../../", "_self");
                 }
                 document.querySelector(host).shadowRoot.querySelector(id).scrollIntoView()
@@ -205,7 +205,7 @@ function Header () {
                             <select onchange="i18next.changeLanguage(this.value)">
                                 <option>--${i18next.t("chooseALanguage")}--</option>
                                 <option value="en">English</option>
-                                <option value="ja">日本語</option>
+                                <option value="ja" disabled="true">日本語</option>
                             </select>
                             <svg viewBox="0 0 448 512" fill="#ffffff" style="width:35px;"><use xlink:href="${rootPath}lib/solid.svg#globe"></use></svg>
                         </button>
