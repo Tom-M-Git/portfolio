@@ -203,6 +203,7 @@ function Main () {
                             width: 100%;
                             height: 100%;
                             z-index: 997;
+                            overflow: auto;
                         }
                         #projects-modal.modal-toggled {
                             display: grid;
