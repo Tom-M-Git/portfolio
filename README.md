@@ -1,2 +1,2 @@
-# portfolio
-https://tom-m-git.github.io/portfolio/
+# A Personal Portfolio
+* Author: _Tomoaki Morioka_

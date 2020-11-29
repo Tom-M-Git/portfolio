@@ -1,0 +1,13 @@
+{
+    "author":"森岡 知映",
+    "portfolio": "ポートフォリオ",
+    "siteSubtitle": "翻訳者 兼 フロントエンド開発者",
+    "summary": "概要",
+    "projects": "プロジェクト",
+    "about": "プロフィール",
+    "technicalDetails": "技術的詳細",
+    "other": "その他",
+    "howManyApples": "リンゴが{{count}}個あります。",
+    "howManyApples_plural": "リンゴが{{count}}個あります。",
+    "chooseALanguage": "言語を選択"
+}
