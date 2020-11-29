@@ -12,6 +12,9 @@ function Header () {
             window.MyHeader = {}
             MyHeader.toggled = new Event("toggled");
             MyHeader.scrollIntoViewAlt = (host, id) => {
+                if(window.location.pathname != new RegExp( `${rootPath}[^/]+/[^/]*`, "i") ){
+                    window.open("../../", "_self");
+                }
                 document.querySelector(host).shadowRoot.querySelector(id).scrollIntoView()
             }
             navMenuList =`

@@ -8,8 +8,10 @@ function Main () {
             rootPath = (hostVar == githubUrl) ? "/portfolio/" : "/",
             //initCss = document.querySelector("link[href*='init.css']")?.outerHTML ?? "404";
             initCss = document.querySelector("link[href*='init.css']").outerHTML;
-            const projects = new Projects();
-            console.log(projects.projects.development.i18nWithReactIntlAndMultilingualPosts);
+
+            window.MyMain = {
+                "projects": new Projects().projects
+            }
 
             Html = () => {
                 html = `
@@ -102,6 +104,11 @@ function Main () {
                             grid-area: arrow;
                             height: 100%;
                             background-color: rgba(0,0,0,0.1);
+                        }
+                        .link-to-category {
+                            grid-area: 1/1/-1/-1;
+                            width: 100%;
+                            height: 100%;
                         }
                         .projects-list {
                             grid-area: list;
@@ -293,29 +300,30 @@ function Main () {
                             <h2>Projects</h2>
                             <section class="projects-category" id="projects-development">
                                 <header class="projects-header" id="projects-header-dev">
-                                   <svg class="projects-category-icon" viewBox="0 0 640 512" fill="#444444" style="width:60px;"><use xlink:href="${rootPath}lib/solid.svg#code"></use></svg>
-                                   <h3 class="projects-category-title">Web Development</h3>
-                                   <svg class="projects-category-arrow" viewBox="0 0 320 512" fill="#444444" style="width:20px;"><use xlink:href="${rootPath}lib/solid.svg#chevron-right"></use></svg>
+                                    <svg class="projects-category-icon" viewBox="0 0 640 512" fill="#444444" style="width:60px;"><use xlink:href="${rootPath}lib/solid.svg#code"></use></svg>
+                                    <h3 class="projects-category-title">Web Development</h3>
+                                    <svg class="projects-category-arrow" viewBox="0 0 320 512" fill="#444444" style="width:20px;"><use xlink:href="${rootPath}lib/solid.svg#chevron-right"></use></svg>
+                                    <a class="link-to-category" href="./projects/development/"></a>
                                 </header>
                                 <ul class="projects-list">
                                     <li>
-                                        <a href="#">
+                                        <a href="./projects/development/#i18n-with-React-Intl-and-multilingual-posts">
                                             <div class="projects-card">
-                                                <img class="projects-thumb" src="${projects.projects.development.i18nWithReactIntlAndMultilingualPosts.thumbnail}">
-                                                <span class="projects-title">${projects.projects.development.i18nWithReactIntlAndMultilingualPosts.name}</span>
+                                                <img class="projects-thumb" src="${MyMain.projects.development['i18n-with-React-Intl-and-multilingual-posts'].thumbnail}">
+                                                <span class="projects-title">${MyMain.projects.development['i18n-with-React-Intl-and-multilingual-posts'].name}</span>
                                             </div>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="./projects/development/#Implementing-Gettext-js">
                                             <div class="projects-card">
-                                                <img class="projects-thumb" src="${projects.projects.development.implementingGettextjs.thumbnail}">
-                                                <span class="projects-title">${projects.projects.development.implementingGettextjs.name}</span>
+                                                <img class="projects-thumb" src="${MyMain.projects.development['Implementing-Gettext-js'].thumbnail}">
+                                                <span class="projects-title">${MyMain.projects.development['Implementing-Gettext-js'].name}</span>
                                             </div>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="./projects/development/">
                                             <div class="projects-card see-all">
                                                 <div class="projects-thumb"></div>
                                                 <span class="see-all-text">See all</span>
@@ -329,26 +337,27 @@ function Main () {
                                     <svg class="projects-category-icon" viewBox="0 0 512 512" fill="#444444" style="width:60px;"><use xlink:href="${rootPath}lib/solid.svg#film"></use></svg>
                                     <h3 class="projects-category-title">Video Editing</h3>
                                     <svg class="projects-category-arrow" viewBox="0 0 320 512" fill="#444444" style="width:20px;"><use xlink:href="${rootPath}lib/solid.svg#chevron-right"></use></svg>
+                                    <a class="link-to-category" href="./projects/videos/"></a>
                                 </header>
                                 <ul class="projects-list">
                                     <li>
-                                        <a href="#">
+                                        <a href="./projects/videos/#Musashi-x-Express-The-report">
                                             <div class="projects-card">
-                                                <img class="projects-thumb" src="${projects.projects.videos.musashiXExpress.thumbnail}">
-                                                <span class="projects-title">${projects.projects.videos.musashiXExpress.name}</span>
+                                                <img class="projects-thumb" src="${MyMain.projects.videos['Musashi-x-Express-The-report'].thumbnail}">
+                                                <span class="projects-title">${MyMain.projects.videos['Musashi-x-Express-The-report'].name}</span>
                                             </div>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="./projects/videos/#Musashi-vol2-Compilation-Video">
                                             <div class="projects-card">
-                                                <img class="projects-thumb" src="${projects.projects.videos.musashiVol2.thumbnail}">
-                                                <span class="projects-title">${projects.projects.videos.musashiVol2.name}</span>
+                                                <img class="projects-thumb" src="${MyMain.projects.videos['Musashi-vol2-Compilation-Video'].thumbnail}">
+                                                <span class="projects-title">${MyMain.projects.videos['Musashi-vol2-Compilation-Video'].name}</span>
                                             </div>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="./projects/videos/">
                                             <div class="projects-card see-all">
                                                 <div class="projects-thumb"></div>
                                                 <span class="see-all-text">See all</span>
@@ -404,7 +413,7 @@ function Main () {
                             </details>
                         </section>
 <!-- ======================================================= -->
-                        <section id="other" name="other">
+                        <section id="other">
                             <details>
                                 <summary class="collapsed-section-title"><h2>Other</h2></summary>
                                 <p><strong>Contains personal affairs such as blog posts.</strong></p>
