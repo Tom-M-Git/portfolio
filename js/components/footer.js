@@ -29,7 +29,7 @@ function Footer() {
                         #social-links a {
                             margin: 0 0.5rem;
                         }
-                        #copyright {
+                        #footer-footer {
                             background-color: #2F2F2F;
                             display: flex;
                             text-align: center;
@@ -47,7 +47,11 @@ function Footer() {
                                 <svg class="social-icon" viewBox="0 0 448 512" fill="#cccccc" style="width:2em;vertical-align:bottom;"><use xlink:href="${rootPath}lib/brands.svg#facebook"></use></svg>
                             </a>
                         </div>
-                        <div id="copyright">Copyright &copy; 2020 Tomoaki Morioka. All rights reserved.</div>
+                        <div id="footer-footer">
+                            Last Modified: November 29, 2020
+                            <br>
+                            Copyright &copy; 2020 Tomoaki Morioka. All rights reserved.
+                        </div>
                     </footer>
                 `;
                 return html;

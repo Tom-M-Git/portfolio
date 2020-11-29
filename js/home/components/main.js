@@ -403,16 +403,18 @@ function Main () {
                             </details>
                         </section>
 <!-- ======================================================= -->
+                        <!--
                         <section id="other">
                             <details>
                                 <summary class="collapsed-section-title"><h2>Other</h2></summary>
-                                <p><strong>Contains personal affairs such as blog posts.</strong></p>
+                                <p><strong>Contains personal affairs such as in blog posts.</strong></p>
                                 <ul class="ul-with-title" aria-label="Extertal Links">
                                     <li><a href="#">Book Shelf</a></li>
                                     <li><a href="#">Personal Blog</a></li>
                                 </ul>
                             </details>
                         </section>
+                        -->
                     </main>
                 `;
                 return html;
