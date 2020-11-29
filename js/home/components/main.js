@@ -19,6 +19,8 @@ function Main () {
                     <style>
                         #main {
                             color: #444444;
+                            background-color: #ffffff;
+                            padding: 1rem;
                         }
                         img {
                             max-width: 100%;
@@ -161,10 +163,10 @@ function Main () {
                                                     <details>
                                                         <summary>Details</summary>
                                                         <ul>
-                                                            <li><label for="progress-react">HTML: </label><progress max="100" value="30"></progress></li>
-                                                            <li><label for="progress-react">CSS: </label><progress max="100" value="30"></progress></li>
-                                                            <li><label for="progress-react">Javascript: </label><progress max="100" value="30"></progress></li>
-                                                            <li><label for="progress-react">React: </label><progress max="100" value="30"></progress></li>
+                                                            <li><label for="progress-html">HTML: </label><progress id="progress-html" max="100" value="60"></progress></li>
+                                                            <li><label for="progress-css">CSS: </label><progress id="progress-css" max="100" value="60"></progress></li>
+                                                            <li><label for="progress-javascript">Javascript: </label><progress id="progress-javascript" max="100" value="50"></progress></li>
+                                                            <li><label for="progress-react">React: </label><progress id="progress-react" max="100" value="30"></progress></li>
                                                         </ul>
                                                     </details>
                                                 </div>
@@ -178,7 +180,7 @@ function Main () {
                                                     <details>
                                                         <summary>Details</summary>
                                                         <ul>
-                                                            <li><label for="progress-react">i18next: </label><progress max="100" value="30"></progress></li>
+                                                            <li><label for="progress-i18next">i18next: </label><progress id="progress-i18next" max="100" value="30"></progress></li>
                                                         </ul>
                                                     </details>
                                                 </div>
@@ -204,7 +206,7 @@ function Main () {
                                                     <details>
                                                         <summary>Details</summary>
                                                         <ul>
-                                                            <li><label for="progress-react">lorem: </label><progress max="100" value="30"></progress></li>
+                                                            <li><label for="progress-davinci">DaVinci Resolve: </label><progress id="progress-davinci" max="100" value="30"></progress></li>
                                                         </ul>
                                                     </details>
                                                 </div>
@@ -215,12 +217,6 @@ function Main () {
                                                     <div class="progress-bar">
                                                         <div class="current-progress" style="width:40%;height:100%;background-color:#fdff89;"><span class="progress-value">Cutting, Connecting, Fixing Sound</span></div>
                                                     </div>
-                                                    <details>
-                                                        <summary>Details</summary>
-                                                        <ul>
-                                                            <li><label for="progress-react">lorem: </label><progress max="100" value="30"></progress></li>
-                                                        </ul>
-                                                    </details>
                                                 </div>
                                             </li>
                                         </ul>
@@ -262,12 +258,6 @@ function Main () {
                                                     <div class="progress-bar">
                                                         <div class="current-progress" style="width:20%;height:100%;background-color:#ff8989;"><span class="progress-value">Beginner</span></div>
                                                     </div>
-                                                    <details>
-                                                        <summary>Details</summary>
-                                                        <ul>
-                                                            <li><label for="progress-react">lorem: </label><progress max="100" value="30"></progress></li>
-                                                        </ul>
-                                                    </details>
                                                 </div>
                                             </li>
                                         </ul>
@@ -413,16 +403,18 @@ function Main () {
                             </details>
                         </section>
 <!-- ======================================================= -->
+                        <!--
                         <section id="other">
                             <details>
                                 <summary class="collapsed-section-title"><h2>Other</h2></summary>
-                                <p><strong>Contains personal affairs such as blog posts.</strong></p>
+                                <p><strong>Contains personal affairs such as in blog posts.</strong></p>
                                 <ul class="ul-with-title" aria-label="Extertal Links">
                                     <li><a href="#">Book Shelf</a></li>
                                     <li><a href="#">Personal Blog</a></li>
                                 </ul>
                             </details>
                         </section>
+                        -->
                     </main>
                 `;
                 return html;

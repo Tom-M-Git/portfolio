@@ -118,6 +118,8 @@ function Main () {
                     <style>
                         #main {
                             color: #444444;
+                            background-color: #ffffff;
+                            padding: 1rem;
                         }
                         img {
                             max-width: 100%;
@@ -196,9 +198,12 @@ function Main () {
                             align-items: center;
                             position: fixed;
                             top: 0;
+                            left: 0;
+                            right: 0;
                             width: 100%;
                             height: 100%;
                             z-index: 997;
+                            overflow: auto;
                         }
                         #projects-modal.modal-toggled {
                             display: grid;

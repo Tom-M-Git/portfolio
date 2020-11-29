@@ -12,7 +12,7 @@ function Header () {
             window.MyHeader = {}
             MyHeader.toggled = new Event("toggled");
             MyHeader.scrollIntoViewAlt = (host, id) => {
-                if(window.location.pathname != window.location.pathname.match(new RegExp( `^${rootPath}[^/]+/|^${rootPath}[^/]+/index.html`, "i")) ){
+                if(window.location.pathname != window.location.pathname.match(new RegExp( `^${rootPath}[^/]+/$|^${rootPath}[^/]+/index.html$`, "i")) ){
                     window.open("../../", "_self");
                 }
                 document.querySelector(host).shadowRoot.querySelector(id).scrollIntoView()
@@ -43,12 +43,14 @@ function Header () {
                             ${i18next.t("technicalDetails")}
                         </a>
                     </li>
+                    <!--
                     <li>
                         <a href="#other" onclick="MyHeader.scrollIntoViewAlt('#page-main', '#other')">
                             <svg viewBox="0 0 448 512" fill="#777777" style="width:35px;"><use xlink:href="${rootPath}lib/solid.svg#external-link-alt"></use></svg>
                             ${i18next.t("other")}
                         </a>
                     </li>
+                    -->
                 </ul>
             `;
             
