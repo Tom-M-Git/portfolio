@@ -1,2 +1,2 @@
 # A Personal Portfolio
-* Author: _Tomoaki Morioka_
+* Author: _Tom. M._
